@@ -4,14 +4,14 @@ function createWindow () {
   const win = new BrowserWindow({
     width: 800,
     height: 600,
+    titleBarStyle: 'hidden',
+    alwaysOnTop: true,
     webPreferences: {
       nodeIntegration: true
     }
   })
 
-  win.loadFile('index.html')
-
-  win.webContents.openDevTools()
+  win.loadURL('http://localhost:8080')
 }
 
 app.whenReady().then(createWindow)
